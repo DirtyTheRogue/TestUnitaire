@@ -34,13 +34,13 @@ public function testGetTask() {
 public function testRemoveInvalidIndexThrowsException() {
     $this->expectException(OutOfBoundsException::class);
     $taskManager = new TaskManager();
-    $taskManager->removeTask(10); // Suppression d’un index invalide
+    $taskManager->removeTask(10); 
 }
 
 public function testGetInvalidIndexThrowsException() {
     $this->expectException(OutOfBoundsException::class);
     $taskManager = new TaskManager();
-    $taskManager->getTask(5); // Récupération d’un index inexistant
+    $taskManager->getTask(5); 
 }
 
 public function testTaskOrderAfterRemoval() {

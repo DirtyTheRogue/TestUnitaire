@@ -31,7 +31,7 @@ class TaskManager
         }
 
         unset($this->tasks[$index]);
-        $this->tasks = array_values($this->tasks); // Réindexe le tableau
+        $this->tasks = array_values($this->tasks); 
     }
 
     /**

@@ -1,6 +1,6 @@
 describe('Task Manager Tests', () => {
     beforeEach(() => {
-        cy.visit('http://localhost:8000'); // Change cette URL si besoin
+        cy.visit('http://localhost:8000'); 
     });
 
     it('Ajoute une nouvelle tâche', () => {

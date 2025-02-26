@@ -10,7 +10,7 @@ if (!isset($_SESSION['tasks'])) {
 }
 
 foreach ($_SESSION['tasks'] as $task) {
-    if (is_string($task)) { // Vérifie que ce n'est pas un array
+    if (is_string($task)) { 
         $taskManager->addTask($task);
     }
 }
@@ -30,7 +30,7 @@ foreach ($_SESSION['tasks'] as $task) {
             // Ajouter une tâche
             addTaskButton.addEventListener("click", function () {
                 const taskValue = taskInput.value.trim();
-                if (taskValue === "") return; // Empêcher d'ajouter une tâche vide
+                if (taskValue === "") return; 
 
                 fetch("add_task.php", {
                     method: "POST",
@@ -41,7 +41,7 @@ foreach ($_SESSION['tasks'] as $task) {
                 .then(data => {
                     if (data.success) {
                         updateTaskList(data.tasks);
-                        taskInput.value = ""; // Réinitialiser l'input
+                        taskInput.value = ""; 
                     }
                 });
             });
@@ -65,10 +65,10 @@ foreach ($_SESSION['tasks'] as $task) {
                 }
             });
 
-            // Mettre à jour la liste des tâches (évite le rechargement de la page)
+            // Mettre à jour la liste des tâches 
             function updateTaskList(tasks) {
                 const taskList = document.getElementById("taskList");
-                taskList.innerHTML = ""; // Effacer l'ancienne liste
+                taskList.innerHTML = ""; 
                 tasks.forEach((task, index) => {
                     const li = document.createElement("li");
                     li.innerHTML = `${task} <button class="deleteTaskButton" data-index="${index}">Supprimer</button>`;
